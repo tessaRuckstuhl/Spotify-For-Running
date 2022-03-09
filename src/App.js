@@ -1,7 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import Dashboard from './components/Dashboard'
+import Login from './components/Login';
 function App() {
 
   
@@ -9,6 +9,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Dashboard/>
+        <Login/>
       </header>
     </div>
   );
