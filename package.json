@@ -24,7 +24,8 @@
     "start:server": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "npx eslint . --ext .js,.ts"
   },
   "proxy": "http://localhost:5000",
   "eslintConfig": {
@@ -51,6 +52,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "prettier": "2.5.1"
+    "eslint": "^8.10.0",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.3",
+    "prettier": "^2.5.1"
   }
 }

@@ -1,6 +1,3 @@
-const { v4: uuidv4 } = require('uuid');
-const queryString = require('query-string');
-
 const express = require('express'); //Line 1
 const authorization = require('./server/routes/authorization');
 const cookieParser = require('cookie-parser');
