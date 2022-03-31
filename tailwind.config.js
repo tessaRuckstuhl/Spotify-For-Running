@@ -25,6 +25,9 @@ module.exports = {
       '6xl': '64px',
       '7xl': '80px',
     },
+    letterSpacing: {
+      widest: '10px'
+    },
     extend: {},
   },
   plugins: [],

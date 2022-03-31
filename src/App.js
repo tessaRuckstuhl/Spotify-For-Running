@@ -1,9 +1,8 @@
 import React from 'react';
 import Dashboard from './components/Dashboard';
-import LoginBtn from './components/LoginBtn';
-import Header from './components/Header';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Landing from './pages/Landing';
+import Header from './layouts/Header/Header';
 
 function App() {
   return (
