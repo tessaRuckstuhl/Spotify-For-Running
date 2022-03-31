@@ -1,5 +1,5 @@
 const express = require('express'); //Line 1
-const authorization = require('./server/routes/authorization');
+const authorization = require('./src/backend/routes/authorization');
 const cookieParser = require('cookie-parser');
 const cors = require('cors')
 const app = express(); //Line 2
