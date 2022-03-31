@@ -6,7 +6,8 @@ module.exports = {
       current: 'currentColor',
       white: '#ffffff',
       blue: '#0856EE',
-      darkGray: '#303030'
+      darkGray: '#303030',
+      darkerGray: '#252525'
     },
     fontFamily: {
       rampart: ['Rampart One'],

@@ -1,7 +1,7 @@
-import { Button } from '@mui/material';
 import axios from 'axios';
 import React, { useState } from 'react';
-import { getHashParams } from '../utils/tools';
+import CreatePlaylist from '../../components/forms/CreatePlaylist';
+import { getHashParams } from '../../utils/tools';
 
 function Dashboard(props) {
   const [profile, setProfile] = useState({});
@@ -26,14 +26,22 @@ function Dashboard(props) {
   };
 
   return (
-    <>
-      {' '}
-      <h1>Dashboard</h1>
-      <Button variant="outlined" onClick={fetchPlaylists}>
-        Me
-      </Button>
-      <div>{JSON.stringify(profile)}</div>
-    </>
+    <div className="flex flex-row justify-around">
+      <div className="flex flex-col">
+        <div className="text-white text-4xl font-rampart">
+          Ready.
+          <br /> Set.
+          <br /> Go
+        </div>
+        <CreatePlaylist />
+        {/* form */}
+      </div>
+      <div className="bg-darkerGray p-5 rounded-xl">
+        <div className="text-white text-4xl font-rampart">
+          Your Playlist Preview
+        </div>
+      </div>
+    </div>
   );
 }
 export default Dashboard;

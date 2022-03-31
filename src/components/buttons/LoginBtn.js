@@ -14,7 +14,7 @@ function LoginBtn() {
   };
 
   return (
-    <Button variant="contained" onClick={authorize}>
+    <Button mode="dark" color="primary" variant="contained" onClick={authorize}>
       Login to Spotify
     </Button>
   );
