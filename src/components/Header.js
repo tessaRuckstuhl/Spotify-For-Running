@@ -1,8 +1,8 @@
 import React from 'react';
 function Header() {
   return (
-    <div className="flex flex-row">
-      <div className="font-bold">TJR</div>
+    <div className="text-base text-white font-light font-reenie px-3 py-1">
+      TJR
     </div>
   );
 }

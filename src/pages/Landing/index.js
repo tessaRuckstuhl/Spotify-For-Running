@@ -3,12 +3,14 @@ import LoginBtn from '../../components/LoginBtn';
 
 function Landing(params) {
   return (
-    <div className="flex flex-row">
-      <div className="flex flex-col">
-        <div className="text-white">Create your playlist for running</div>
+    <div className="flex flex-row justify-around px-5">
+      <div className="flex flex-col justify-around">
+        <div className="text-4xl text-white font-rampart">
+          Create your playlist for running
+        </div>
         <LoginBtn />
       </div>
-      <img src="/img/FinishLine.png" />
+      <img width="50%" src="/img/FinishLine.png" />
     </div>
   );
 }
