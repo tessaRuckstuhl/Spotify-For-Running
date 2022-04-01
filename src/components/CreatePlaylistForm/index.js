@@ -1,4 +1,4 @@
-import { Button, Slider, TextField } from '@mui/material';
+import { Button, Slider, Stack, TextField } from '@mui/material';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import SelectMultiplePlaylists from './SelectMultiplePlaylists';
@@ -37,8 +37,13 @@ function CreatePlaylistForm(props) {
         label="Name"
         variant="outlined"
         color="primary"
+        fullWidth
       />
-      <Slider min={0} max={99} defaultValue={30} />
+      <Stack spacing={2} direction="row" sx={{ mb: 1, padding:'20px 0px', margin:0 }} alignItems="center">
+        <span className="text-white"> 0 bpm</span>
+        <Slider min={0} max={99} defaultValue={30} />
+        <span className="text-white">100 bpm</span>
+      </Stack>
       <SelectMultiplePlaylists playlists={playlistNames} />
       <Button variant="contained">Create Playlist</Button>
     </div>

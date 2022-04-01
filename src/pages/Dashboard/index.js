@@ -16,8 +16,8 @@ function Dashboard() {
   }, []);
 
   return (
-    <div className="flex flex-row justify-around">
-      <div className="flex flex-col">
+    <div className="flex flex-row justify-around px-5">
+      <div className="flex flex-col w-1/3 justify-around">
         <div className="text-white text-4xl font-rampart">
           Ready.
           <br /> Set.

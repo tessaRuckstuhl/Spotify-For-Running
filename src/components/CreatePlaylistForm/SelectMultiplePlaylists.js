@@ -24,7 +24,7 @@ function SelectMultiplePlaylists(props) {
 
   return (
     <div>
-      <FormControl sx={{ m: 1, width: 300 }}>
+      <FormControl sx={{ m: 1, width: '100%', margin:0 }}>
         <InputLabel id="select-playlists-checkbox-label">Playlists</InputLabel>
         <Select
           labelId="select-playlists-checkbox-label"

@@ -20,9 +20,6 @@ const darkTheme = {
     MuiOutlinedInput: {
       styleOverrides: {
         root: { color: 'white' },
-        input: {
-          color: 'white',
-        },
       },
     },
   },
