@@ -24,8 +24,9 @@ function Dashboard() {
           <br /> Go!
         </div>
         <CreatePlaylistForm accessToken={accessToken} />
-        {/* form */}
       </div>
+      <img width="40%" src="/img/WorkHard.png" />
+
       {/* <div className="bg-darkerGray p-5 rounded-xl">
         <div className="text-white text-4xl font-rampart">
           Your Playlist Preview

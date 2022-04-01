@@ -1,4 +1,3 @@
-
 const darkTheme = {
   palette: {
     type: 'dark',
@@ -11,11 +10,20 @@ const darkTheme = {
     text: {
       primary: 'rgba(255,255,255,0.87)',
       secondary: '#fff',
-
     },
     background: {
       paper: '#252525',
       default: '#303030',
+    },
+  },
+  components: {
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: { color: 'white' },
+        input: {
+          color: 'white',
+        },
+      },
     },
   },
 };

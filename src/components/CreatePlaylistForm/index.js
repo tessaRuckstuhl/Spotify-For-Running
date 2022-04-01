@@ -4,13 +4,11 @@ import React, { useEffect, useState } from 'react';
 import SelectMultiplePlaylists from './SelectMultiplePlaylists';
 
 function CreatePlaylistForm(props) {
-  console.log(props);
   const { accessToken } = props;
   const [playlistNames, setPlaylistNames] = useState([]);
 
   useEffect(() => {
     console.log('AccessToken is ', accessToken);
-
     if (accessToken) {
       fetchPlaylists(accessToken);
     }
