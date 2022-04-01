@@ -1,16 +1,29 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CreatePlaylist from '../../components/forms/CreatePlaylist';
 import { getHashParams } from '../../utils/tools';
 
 function Dashboard(props) {
   const [profile, setProfile] = useState({});
-
-  const fetchPlaylists = async () => {
+  const [accessToken, setAccessToken] = useState(null)
+  useEffect(() => {
     if (window.location.hash) {
       const params = getHashParams();
+      if(params.access_token){
+        setAccessToken(params.access_token)
+      }
+    }
+  }, [])
+
+  useEffect(()=> {
+    console.log('AT', accessToken)
+    fetchPlaylists()
+  }, [accessToken])
+  
+
+  const fetchPlaylists = async () => {
       var options = {
-        headers: { Authorization: 'Bearer ' + params.access_token },
+        headers: { Authorization: 'Bearer ' + accessToken },
         json: true,
       };
       try {
@@ -22,7 +35,6 @@ function Dashboard(props) {
       } catch (error) {
         console.log(error);
       }
-    }
   };
 
   return (

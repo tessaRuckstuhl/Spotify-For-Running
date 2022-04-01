@@ -1,3 +1,6 @@
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
 const express = require('express'); //Line 1
 const authorization = require('./src/backend/routes/authorization');
 const cookieParser = require('cookie-parser');
@@ -13,6 +16,6 @@ app.get('/express_backend', (req, res) => {
   //Line 9
   res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' }); //Line 10
 }); //Li
-
 app.use(cors()).use(cookieParser());
+
 app.use('/auth', authorization);

@@ -11,7 +11,7 @@ var stateKey = 'spotify_auth_state';
  * @param  {number} length The length of the string
  * @return {string} The generated string
  */
- function generateRandomString(length) {
+function generateRandomString(length) {
   var text = '';
   var possible =
     'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -25,7 +25,6 @@ var stateKey = 'spotify_auth_state';
 router.get('/login', function (req, res) {
   var state = generateRandomString(16);
   res.cookie(stateKey, state);
-
   // your application requests authorization
   var scope = 'user-read-private user-read-email';
   res.redirect(
@@ -43,7 +42,7 @@ router.get('/login', function (req, res) {
 router.get('/callback', function (req, res) {
   // your application requests refresh and access tokens
   // after checking the state parameter
-
+  console.log(req.query.state, req.cookies[stateKey]);
   var code = req.query.code || null;
   var state = req.query.state || null;
   var storedState = req.cookies ? req.cookies[stateKey] : null;
@@ -90,9 +89,9 @@ router.get('/callback', function (req, res) {
           console.log(body);
         });
 
-        // we can also pass the token to the browser to make requests from there
+        // pass the token to the browser to make requests from there
         res.redirect(
-          'http://localhost:3000/#' +
+          'http://localhost:3000/dashboard#' +
             querystring.stringify({
               access_token: access_token,
               refresh_token: refresh_token,

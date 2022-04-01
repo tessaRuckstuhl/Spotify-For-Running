@@ -7,7 +7,7 @@ function LoginBtn() {
 
   const authorize = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/auth/login');
+      window.location.href = 'http://localhost:5000/auth/login';
     } catch (error) {
       console.log(error);
     }
