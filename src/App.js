@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Landing from './pages/Landing';
+import Landing from './pages';
 import Header from './layouts/Header/Header';
 import Dashboard from './pages/Dashboard';
 import darkTheme from './themes/darkTheme';

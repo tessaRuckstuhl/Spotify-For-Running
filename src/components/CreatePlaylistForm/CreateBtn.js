@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { Button } from '@mui/material';
 import React from 'react';
+import CreatePlaylistService from '../../services/CreatePlaylistService';
 function CreateBtn(props) {
   const { userId, accessToken } = props;
 
@@ -10,18 +11,18 @@ function CreateBtn(props) {
       json: true,
     };
     try {
-      const res = await axios.post(
-        `https://api.spotify.com/v1/users/${userId}/playlists`,
-        { name: 'AaTest', description: 'Test', public: false },
-        options
+      const createdPlaylist = await CreatePlaylistService(
+        accessToken,
+        userId,
+        'My-playlist-name'
       );
-      const playlistId = res.data.id;
+      const playlistId = createPlaylist.id;
       // TODO match songs from playlists with bpm...
-      const uris = ['spotify:track:1301WleyT98MSxVHPZCA6M']
-      await axios.post(
-        `https://api.spotify.com/v1/playlists/${playlistId}/tracks`,
-        { ...uris },
-        options
+      const uris = ['spotify:track:1301WleyT98MSxVHPZCA6M'];
+      await CreatePlaylistService.addTracksToPlaylist(
+        accessToken,
+        playlistId,
+        uris
       );
     } catch (error) {
       console.log(error);

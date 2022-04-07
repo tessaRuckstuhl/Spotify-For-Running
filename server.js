@@ -2,7 +2,7 @@ if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
 const express = require('express'); //Line 1
-const authorization = require('./src/backend/routes/authorization');
+const authorization = require('./backend/routes/authorization');
 const cookieParser = require('cookie-parser');
 const cors = require('cors')
 const app = express(); //Line 2

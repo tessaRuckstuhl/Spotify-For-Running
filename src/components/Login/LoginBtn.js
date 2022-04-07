@@ -2,8 +2,6 @@ import { Button } from '@mui/material';
 import React, { useState } from 'react';
 
 function LoginBtn() {
-  const [profile, setProfile] = useState({});
-
   const authorize = async () => {
     try {
       window.location.href = 'http://localhost:5000/auth/login';
