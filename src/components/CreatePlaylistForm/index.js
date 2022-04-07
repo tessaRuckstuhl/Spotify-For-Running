@@ -9,17 +9,21 @@ import PlaylistService from '../../services/PlaylistService';
 import { useToken } from '../../contexts/TokenContext';
 
 function CreatePlaylistForm() {
-  const [availablePlaylists, setAvailablePlaylists] = useState([]);
+  const [usersPlaylists, setUsersPlaylists] = useState([]);
+  const [usersPlaylistsIds, setUsersPlaylistsIds] = useState([]);
   const [userId, setUserId] = useState('');
+
   const { accessToken } = useToken();
+
   const [form, setForm] = useState({
     playlistName: '',
-    selectedPlaylists: [],
+    selectedPlaylistsIds: [],
     bpm: 160,
   });
 
   const handleFormChange = (event) => {
     const updatedForm = { ...form };
+    console.log('handle form change: ', event.target.name, event.target.value);
     updatedForm[event.target.name] = event.target.value;
     setForm(updatedForm);
   };
@@ -46,7 +50,8 @@ function CreatePlaylistForm() {
   const fetchPlaylists = async () => {
     try {
       const playlists = await PlaylistService.getPlaylists(accessToken, userId);
-      setAvailablePlaylists(playlists.map((p) => p.name));
+      setUsersPlaylists(playlists.map((p) => p.name));
+      setUsersPlaylistsIds(playlists.map((p) => p.id));
     } catch (error) {
       console.log(error);
     }
@@ -60,13 +65,14 @@ function CreatePlaylistForm() {
       />
       <BpmSlider value={form.bpm} name={'bpm'} onChange={handleFormChange} />
       <SelectMultiplePlaylists
-        name={'selectedPlaylists'}
-        value={form.selectedPlaylists}
+        name={'selectedPlaylistsIds'}
+        value={form.selectedPlaylistsIds}
         onChange={handleFormChange}
-        availablePlaylists={availablePlaylists}
+        usersPlaylists={usersPlaylists}
+        usersPlaylistsIds={usersPlaylistsIds}
       />
       <h1 className="text-white">{JSON.stringify(form)}</h1>
-      <CreateBtn userId={userId} accessToken={accessToken} form={form} />
+      <CreateBtn userId={userId} form={form} />
     </div>
   );
 }

@@ -1,29 +1,40 @@
 import axios from 'axios';
 import { Button } from '@mui/material';
 import React from 'react';
-import CreatePlaylistService from '../../services/CreatePlaylistService';
+import PlaylistService from '../../services/PlaylistService';
+import { useToken } from '../../contexts/TokenContext';
 function CreateBtn(props) {
-  const { userId, accessToken } = props;
+  const { accessToken } = useToken();
+  const { userId, form } = props;
 
   const createPlaylist = async () => {
-    var options = {
-      headers: { Authorization: 'Bearer ' + accessToken },
-      json: true,
-    };
     try {
-      const createdPlaylist = await CreatePlaylistService(
+      console.log('FORM', form);
+      // create empty playlist
+      const createdPlaylist = await PlaylistService.createPlaylist(
         accessToken,
         userId,
-        'My-playlist-name'
+        form.playlistName
       );
-      const playlistId = createPlaylist.id;
+      const playlistId = createdPlaylist.id;
+      // get all tracks from selected playlists
+      const selectedTracks = [];
+      // get playlist id from form...
+      for (let idx = 0; idx < form.selectedPlaylists.length; idx++) {
+        const tracks = await PlaylistService.getPlaylistItems(
+          accessToken,
+          form.selectedPlaylists[idx]
+        );
+        console.log(tracks);
+        // form.selectedPlaylists[idx]
+      }
+      form.selectedPlaylists.forEach();
+      // for each track get tempo
+      //create playlist with tracks
+
       // TODO match songs from playlists with bpm...
       const uris = ['spotify:track:1301WleyT98MSxVHPZCA6M'];
-      await CreatePlaylistService.addTracksToPlaylist(
-        accessToken,
-        playlistId,
-        uris
-      );
+      await PlaylistService.addTracksToPlaylist(accessToken, playlistId, uris);
     } catch (error) {
       console.log(error);
       console.error(error);

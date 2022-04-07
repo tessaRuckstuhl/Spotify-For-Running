@@ -1,19 +1,38 @@
-import axios from 'axios';
+import API from '../utils/api';
 
 export default {
   getPlaylists: async (accessToken, userId) => {
-    var options = {
-      headers: { Authorization: 'Bearer ' + accessToken },
-      json: true,
-    };
-    try {
-      const res = await axios.get(
-        `https://api.spotify.com/v1/users/${userId}/playlists`,
-        options
-      );
-      return res.data.items;
-    } catch (error) {
-      console.log(error);
-    }
+    const res = await API.performRequest(
+      accessToken,
+      'get',
+      `https://api.spotify.com/v1/users/${userId}/playlists`
+    );
+    return res.data.items;
+  },
+  getPlaylistItems: async (accessToken, playlistId) => {
+    const res = await API.performRequest(
+      accessToken,
+      'get',
+      `https://api.spotify.com/playlists/${playlistId}/tracks`
+    );
+    console.log(res.data);
+    return res.data.items;
+  },
+  createPlaylist: async (accessToken, userId, name) => {
+    const res = await API.performRequest(
+      accessToken,
+      'post',
+      `https://api.spotify.com/v1/users/${userId}/playlists`,
+      { name: name, description: null, public: false }
+    );
+    return res.data;
+  },
+  addTracksToPlaylist: async (accessToken, playlistId, uris) => {
+    await API.performRequest(
+      accessToken,
+      'post',
+      `https://api.spotify.com/v1/playlists/${playlistId}/tracks`,
+      uris
+    );
   },
 };

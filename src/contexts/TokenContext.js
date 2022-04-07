@@ -23,7 +23,6 @@ export function TokenContextProvider({ children }) {
 }
 export function useToken() {
   const context = useContext(TokenContext);
-  console.log(TokenContext, context);
   if (context === undefined) {
     throw new Error('Context must be within provider');
   }

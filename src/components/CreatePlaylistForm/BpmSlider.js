@@ -8,9 +8,9 @@ function BpmSlider(props) {
         min={0}
         max={300}
         value={value}
-        defaultValue={100}
+        // defaultValue={100}
         name={name}
-        onChangeCommitted={onChange}
+        onChange={onChange}
         valueLabelDisplay="auto"
       />
   );
