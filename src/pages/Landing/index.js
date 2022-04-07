@@ -1,5 +1,5 @@
 import React from 'react';
-import LoginBtn from '../../components/buttons/LoginBtn';
+import LoginBtn from '../../components/Login/LoginBtn';
 
 function Landing(params) {
   return (

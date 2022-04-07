@@ -8,36 +8,25 @@ import Select from '@mui/material/Select';
 import Checkbox from '@mui/material/Checkbox';
 
 function SelectMultiplePlaylists(props) {
-  const { playlists } = props;
-  const [selectedPlaylists, setSelectedPlaylists] = React.useState([]);
-
-  const handleChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    console.log(value);
-    setSelectedPlaylists(
-      // On autofill we get a stringified value.
-      typeof value === 'string' ? value.split(',') : value
-    );
-  };
+  const { availablePlaylists, name, value, onChange } = props;
 
   return (
     <div>
-      <FormControl sx={{ m: 1, width: '100%', margin:0 }}>
+      <FormControl sx={{ m: 1, width: '100%', margin: 0 }}>
         <InputLabel id="select-playlists-checkbox-label">Playlists</InputLabel>
         <Select
           labelId="select-playlists-checkbox-label"
           id="select-playlists-checkbox"
           multiple
-          value={selectedPlaylists}
-          onChange={handleChange}
+          name={name}
+          value={value}
+          onChange={onChange}
           input={<OutlinedInput label="Playlists" />}
           renderValue={(selected) => selected.join(', ')}
         >
-          {playlists.map((playlist) => (
+          {availablePlaylists.map((playlist) => (
             <MenuItem key={playlist} value={playlist}>
-              <Checkbox checked={selectedPlaylists.indexOf(playlist) > -1} />
+              <Checkbox checked={value.indexOf(playlist) > -1} />
               <ListItemText primary={playlist} />
             </MenuItem>
           ))}
