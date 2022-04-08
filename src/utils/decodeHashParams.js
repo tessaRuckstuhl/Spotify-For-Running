@@ -2,7 +2,7 @@
  * Obtains parameters from the hash of the URL
  * @return Object
  */
-function getHashParams() {
+function decodeHashParams() {
   var hashParams = {};
   var e,
     r = /([^&;=]+)=?([^&;]*)/g,
@@ -13,4 +13,4 @@ function getHashParams() {
   return hashParams;
 }
 
-export { getHashParams };
+export { decodeHashParams };

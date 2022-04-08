@@ -1,6 +1,6 @@
 import { ThemeContext } from '@emotion/react';
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { getHashParams } from '../utils/tools';
+import { decodeHashParams } from '../utils/decodeHashParams';
 
 const TokenContext = createContext();
 
@@ -8,7 +8,7 @@ export function TokenContextProvider({ children }) {
   const [accessToken, setAccessToken] = useState('');
   useEffect(() => {
     if (window.location.hash) {
-      const params = getHashParams();
+      const params = decodeHashParams();
       if (params.access_token) {
         setAccessToken(params.access_token);
       }

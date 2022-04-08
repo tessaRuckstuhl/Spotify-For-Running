@@ -1,13 +1,9 @@
-import axios from 'axios';
-import API from '../utils/api';
+import { HTTPMethods } from '../utils/httpMethods';
+import SpotifyAPI from '../utils/useSpotifyApi';
 
 export default {
   getCurrentUser: async (accessToken) => {
-    const res = await API.performRequest(
-      accessToken,
-      'get',
-      'https://api.spotify.com/v1/me'
-    );
+    const res = await SpotifyAPI.performRequest(accessToken, HTTPMethods.GET, '/me');
     return res.data;
   },
 };
