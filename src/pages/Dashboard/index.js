@@ -1,5 +1,5 @@
 import React from 'react';
-import CreatePlaylistForm from '../../components/CreatePlaylistForm';
+import CreatePlaylistForm from '../../components/CreatePlaylistForm/CreateForm';
 import { TokenContextProvider } from '../../contexts/TokenContext';
 
 function Dashboard() {
