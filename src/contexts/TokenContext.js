@@ -1,6 +1,5 @@
-import { ThemeContext } from '@emotion/react';
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { decodeHashParams } from '../utils/decodeHashParams';
+import  decodeHashParams  from '../utils/decodeHashParams';
 
 const TokenContext = createContext();
 

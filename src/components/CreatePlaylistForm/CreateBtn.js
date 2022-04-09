@@ -3,38 +3,20 @@ import { Button } from '@mui/material';
 import React from 'react';
 import PlaylistService from '../../services/PlaylistService';
 import { useToken } from '../../contexts/TokenContext';
+import assembleNewPlaylist from '../../utils/assembleNewPlaylist';
+import createPlaylistFromUris from '../../utils/createPlaylistFromUris';
 function CreateBtn(props) {
   const { accessToken } = useToken();
   const { userId, form } = props;
 
   const createPlaylist = async () => {
     try {
-      console.log('FORM', form);
-      // create empty playlist
-      const createdPlaylist = await PlaylistService.createPlaylist(
+      const uris = await assembleNewPlaylist(
         accessToken,
-        userId,
-        form.playlistName
+        form.selectedPlaylistsIds,
+        form.bpm
       );
-      const playlistId = createdPlaylist.id;
-      // get all tracks from selected playlists
-      const selectedTracks = [];
-      // get playlist id from form...
-      for (let idx = 0; idx < form.selectedPlaylists.length; idx++) {
-        const tracks = await PlaylistService.getPlaylistItems(
-          accessToken,
-          form.selectedPlaylists[idx]
-        );
-        console.log(tracks);
-        // form.selectedPlaylists[idx]
-      }
-      form.selectedPlaylists.forEach();
-      // for each track get tempo
-      //create playlist with tracks
-
-      // TODO match songs from playlists with bpm...
-      const uris = ['spotify:track:1301WleyT98MSxVHPZCA6M'];
-      await PlaylistService.addTracksToPlaylist(accessToken, playlistId, uris);
+      await createPlaylistFromUris(accessToken, uris, userId, form.playlistName);
     } catch (error) {
       console.log(error);
       console.error(error);

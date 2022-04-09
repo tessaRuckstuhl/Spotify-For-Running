@@ -6,9 +6,8 @@ function BpmSlider(props) {
   return (
       <Slider
         min={0}
-        max={300}
+        max={200}
         value={value}
-        // defaultValue={100}
         name={name}
         onChange={onChange}
         valueLabelDisplay="auto"

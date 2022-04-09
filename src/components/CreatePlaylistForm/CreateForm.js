@@ -18,7 +18,7 @@ function CreatePlaylistForm() {
   const [form, setForm] = useState({
     playlistName: '',
     selectedPlaylistsIds: [],
-    bpm: 160,
+    bpm: [120,140],
   });
 
   const handleFormChange = (event) => {
