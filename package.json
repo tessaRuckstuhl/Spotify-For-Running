@@ -31,7 +31,6 @@
     "eject": "react-scripts eject",
     "lint": "npx eslint . --ext .js,.ts"
   },
-  "proxy": "http://localhost:5000",
   "eslintConfig": {
     "extends": [
       "react-app",

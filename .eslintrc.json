@@ -17,11 +17,9 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react",
-        "prettier"
-    ],
+        "react"
+        ],
     "rules": {
-        "prettier/prettier": "warn",
         "no-unused-vars": "warn",
         "no-console": "off",
         "func-names": "off",
@@ -29,6 +27,6 @@
         "object-shorthand": "off",
         "class-methods-use-this": "off",
         "node/no-unsupported-features/es-syntax":"off",
-        "react/prop-types": "warn"
+        "react/prop-types": "off"
     }
 }
