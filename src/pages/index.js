@@ -1,7 +1,7 @@
 import React from 'react';
 import LoginBtn from '../components/Login/LoginBtn';
 
-function Landing(params) {
+function Landing() {
   return (
     <div className="flex flex-row justify-around px-5">
       <div className="flex flex-col justify-around w-1/3">
