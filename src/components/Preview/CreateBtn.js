@@ -9,14 +9,8 @@ function CreateBtn(props) {
 
   const createPlaylist = async () => {
     try {
-      const uris = await assembleNewPlaylist(
-        accessToken,
-        form.selectedPlaylistsIds,
-        form.bpm
-      );
-      await createPlaylistFromUris(accessToken, uris, userId, form.playlistName);
+      // await createPlaylistFromUris(accessToken, uris, userId, form.playlistName);
     } catch (error) {
-      console.log(error);
       console.error(error);
     }
   };

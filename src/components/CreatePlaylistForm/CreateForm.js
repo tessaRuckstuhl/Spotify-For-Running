@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import BpmSlider from './BpmSlider';
-import CreateBtn from './CreateBtn';
+import ConfigureBtn from './ConfigureBtn';
 import InputName from './InputName';
 import SelectMultiplePlaylists from './SelectMultiplePlaylists';
 import UserService from '../../services/UserService';
@@ -9,7 +9,8 @@ import { useToken } from '../../contexts/TokenContext';
 
 function CreatePlaylistForm() {
   const [usersPlaylists, setUsersPlaylists] = useState([]);
-  const [usersPlaylistsIds, setUsersPlaylistsIds] = useState([]);
+  const [usersPlaylistsIds, setUsersPlaylistsIds] =
+    useState([]);
   const [userId, setUserId] = useState('');
 
   const { accessToken } = useToken();
@@ -17,12 +18,16 @@ function CreatePlaylistForm() {
   const [form, setForm] = useState({
     playlistName: '',
     selectedPlaylistsIds: [],
-    bpm: [120,140],
+    bpm: [120, 140],
   });
 
   const handleFormChange = (event) => {
     const updatedForm = { ...form };
-    console.log('handle form change: ', event.target.name, event.target.value);
+    console.log(
+      'handle form change: ',
+      event.target.name,
+      event.target.value
+    );
     updatedForm[event.target.name] = event.target.value;
     setForm(updatedForm);
   };
@@ -39,7 +44,9 @@ function CreatePlaylistForm() {
 
   const fetchMe = async () => {
     try {
-      const user = await UserService.getCurrentUser(accessToken);
+      const user = await UserService.getCurrentUser(
+        accessToken
+      );
       setUserId(user.id);
     } catch (error) {
       console.log(error);
@@ -48,7 +55,10 @@ function CreatePlaylistForm() {
 
   const fetchPlaylists = async () => {
     try {
-      const playlists = await PlaylistService.getPlaylists(accessToken, userId);
+      const playlists = await PlaylistService.getPlaylists(
+        accessToken,
+        userId
+      );
       setUsersPlaylists(playlists.map((p) => p.name));
       setUsersPlaylistsIds(playlists.map((p) => p.id));
     } catch (error) {
@@ -62,7 +72,11 @@ function CreatePlaylistForm() {
         name={'playlistName'}
         onChange={handleFormChange}
       />
-      <BpmSlider value={form.bpm} name={'bpm'} onChange={handleFormChange} />
+      <BpmSlider
+        value={form.bpm}
+        name={'bpm'}
+        onChange={handleFormChange}
+      />
       <SelectMultiplePlaylists
         name={'selectedPlaylistsIds'}
         value={form.selectedPlaylistsIds}
@@ -70,8 +84,7 @@ function CreatePlaylistForm() {
         usersPlaylists={usersPlaylists}
         usersPlaylistsIds={usersPlaylistsIds}
       />
-      <h1 className="text-white">{JSON.stringify(form)}</h1>
-      <CreateBtn userId={userId} form={form} />
+      <ConfigureBtn userId={userId} form={form} />
     </div>
   );
 }

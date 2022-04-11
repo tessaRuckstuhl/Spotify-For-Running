@@ -22,6 +22,38 @@ const darkTheme = {
         root: { color: 'white' },
       },
     },
+    // Table
+    MuiTableContainer: {
+      styleOverrides: {
+        root: {
+          background: '#04021E',
+        },
+      },
+    },
+    MuiTableHead: {
+      styleOverrides: {
+        root: {
+          background: '#04021E',
+        },
+      },
+    },
+    MuiTableCell: {
+      styleOverrides: {
+        root: {
+          borderBottom: '1px solid #070424',
+        },
+        head: {
+          background: '#04021E',
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: {
+          background: '#04021E',
+        },
+      },
+    },
   },
 };
 
