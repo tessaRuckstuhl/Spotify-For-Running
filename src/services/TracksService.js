@@ -24,11 +24,19 @@ export default {
    * @returns {Object} tracks' audio features
    */
   getTracksAudioFeatures: async (accessToken, ids) => {
-    const res = await SpotifyAPI.performRequest(
-      accessToken,
-      HTTPMethods.GET,
-      `/audio-features?ids=${ids}`
-    );
-    return res.data.audio_features;
+    const numTracks = ids.split(',');
+    const iterations = Math.round(numTracks.length / 100);
+    const res = [];
+    for (const i of [...Array(iterations).keys()]) {
+      const batch = numTracks.slice(i * 100, (i + 1) * 100);
+      const partRes = await SpotifyAPI.performRequest(
+        accessToken,
+        HTTPMethods.GET,
+        `/audio-features?ids=${batch.join()}`
+      );
+      res.push(...partRes.data.audio_features);
+    }
+
+    return res;
   },
 };

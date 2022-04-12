@@ -16,7 +16,6 @@ export default {
       HTTPMethods.GET,
       `/playlists/${playlistId}/tracks`
     );
-    console.log(res.data);
     return res.data.items;
   },
   createPlaylist: async (accessToken, userId, name) => {
@@ -35,6 +34,5 @@ export default {
       `/playlists/${playlistId}/tracks`,
       uris
     );
-    console.log('addTracks',res)
   },
 };

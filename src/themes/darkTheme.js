@@ -22,6 +22,18 @@ const darkTheme = {
         root: { color: 'white' },
       },
     },
+    // Button
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          background: '#0856EE',
+          '&.Mui-disabled': {
+            background: '#072270',
+
+          }
+        },
+      },
+    },
     // Table
     MuiTableContainer: {
       styleOverrides: {

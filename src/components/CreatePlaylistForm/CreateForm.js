@@ -23,11 +23,6 @@ function CreatePlaylistForm() {
 
   const handleFormChange = (event) => {
     const updatedForm = { ...form };
-    console.log(
-      'handle form change: ',
-      event.target.name,
-      event.target.value
-    );
     updatedForm[event.target.name] = event.target.value;
     setForm(updatedForm);
   };

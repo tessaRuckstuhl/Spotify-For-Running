@@ -9,8 +9,8 @@ function Dashboard() {
   return (
     <TokenContextProvider>
       <TracksContextProvider>
-        <div className="flex flex-row px-5 justify-evenly align-top">
-          <div className="flex flex-col w-1/3 justify-center px-5">
+        <div className="flex flex-row px-5 justify-evenly items-start">
+          <div className="flex flex-col space-y-5 w-1/3 justify-center px-5">
             <div className="text-white text-5xl font-rampart mb-10">
               Ready.
               <br /> Set.
@@ -18,12 +18,12 @@ function Dashboard() {
             </div>
             <CreatePlaylistForm />
           </div>
-          <div className="px-5">
+          <div className="flex flex-col space-y-5 px-5">
             <div className="text-white text-5xl font-rampart mb-10">
               Preview
             </div>
-              <PreviewTable />
-              <CreateBtn />
+            <PreviewTable />
+            <CreateBtn />
           </div>
         </div>
       </TracksContextProvider>

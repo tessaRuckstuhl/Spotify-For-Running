@@ -43,13 +43,6 @@ const assembleNewPlaylist = async (
       );
     console.log('tracksfeatures full',tracksFeatures);
 
-    //return uris in tempo range
-    // const relevantTrackss = audioFeatures
-    //   .filter(
-    //     (track) =>
-    //       track.tempo >= range[0] && track.tempo <= range[1]
-    //   )
-    //   .map((track) => track.uri);
     return tracksFeatures;
   } catch (error) {
     console.error(error);
