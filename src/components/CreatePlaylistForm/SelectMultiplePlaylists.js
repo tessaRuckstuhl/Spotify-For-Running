@@ -15,7 +15,6 @@ function SelectMultiplePlaylists(props) {
     value,
     onChange,
   } = props;
-  console.log(usersPlaylists, usersPlaylistsIds);
   return (
     <div>
       <FormControl sx={{ m: 1, width: '100%', margin: 0 }}>

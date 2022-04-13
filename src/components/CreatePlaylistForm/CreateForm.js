@@ -5,15 +5,14 @@ import InputName from './InputName';
 import SelectMultiplePlaylists from './SelectMultiplePlaylists';
 import UserService from '../../services/UserService';
 import PlaylistService from '../../services/PlaylistService';
-import { useToken } from '../../contexts/TokenContext';
+import { useUserToken } from '../../contexts/UserTokenContext';
 
 function CreatePlaylistForm() {
   const [usersPlaylists, setUsersPlaylists] = useState([]);
   const [usersPlaylistsIds, setUsersPlaylistsIds] =
     useState([]);
-  const [userId, setUserId] = useState('');
 
-  const { accessToken } = useToken();
+  const { accessToken, userId } = useUserToken();
 
   const [form, setForm] = useState({
     playlistName: '',
@@ -28,25 +27,10 @@ function CreatePlaylistForm() {
   };
 
   useEffect(() => {
-    fetchMe();
-  }, [accessToken]);
-
-  useEffect(() => {
     if (userId) {
       fetchPlaylists();
     }
   }, [userId]);
-
-  const fetchMe = async () => {
-    try {
-      const user = await UserService.getCurrentUser(
-        accessToken
-      );
-      setUserId(user.id);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   const fetchPlaylists = async () => {
     try {

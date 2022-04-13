@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -28,9 +28,9 @@ const PreviewTable = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {tracks.map((row) => (
+          {tracks.map((row, i) => (
             <TableRow
-              key={row.name}
+              key={`${row.name}-${i}`}
               sx={{
                 '&:last-child td, &:last-child th': {
                   border: 0,

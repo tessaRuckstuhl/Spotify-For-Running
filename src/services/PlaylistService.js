@@ -27,12 +27,17 @@ export default {
     );
     return res.data;
   },
-  addTracksToPlaylist: async (accessToken, playlistId, uris) => {
+  addTracksToPlaylist: async (
+    accessToken,
+    playlistId,
+    uris
+  ) => {
+    console.log(uris, uris.length);
     const res = await SpotifyAPI.performRequest(
       accessToken,
       HTTPMethods.POST,
       `/playlists/${playlistId}/tracks`,
-      uris
+      { uris: uris }
     );
   },
 };

@@ -1,22 +1,20 @@
 import { Button } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import { useToken } from '../../contexts/TokenContext';
+import { useUserToken } from '../../contexts/UserTokenContext';
 import { useTracks } from '../../contexts/TracksContext';
 import assembleNewPlaylist from '../../utils/assembleNewPlaylist';
-import createPlaylistFromUris from '../../utils/createPlaylistFromUris';
 function ConfigureBtn(props) {
-  const { accessToken } = useToken();
-  const { setTracks } = useTracks();
+  const { accessToken } = useUserToken();
+  const { setTracks, setName } = useTracks();
   const [loading, setLoading] = useState(false);
   const { form } = props;
-  console.log(form);
 
   useEffect(() => {
-    if(loading){
-      createPlaylist()
+    if (loading) {
+      configurePlaylist();
     }
-  }, [loading])
-  const createPlaylist = async () => {
+  }, [loading]);
+  const configurePlaylist = async () => {
     try {
       const tracks = await assembleNewPlaylist(
         accessToken,
@@ -24,6 +22,7 @@ function ConfigureBtn(props) {
         form.bpm
       );
       setLoading(false);
+      setName(form.playlistName);
       setTracks(tracks);
     } catch (error) {
       console.error(error);
@@ -32,9 +31,10 @@ function ConfigureBtn(props) {
   return (
     <Button
       disabled={
-        form.selectedPlaylistsIds.length == 0 || !form.playlistName
+        form.selectedPlaylistsIds.length == 0 ||
+        !form.playlistName
       }
-      loading={loading}
+      loading={loading + ''}
       variant="contained"
       onClick={() => setLoading(true)}
     >

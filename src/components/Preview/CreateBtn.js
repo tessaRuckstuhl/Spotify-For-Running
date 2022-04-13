@@ -1,15 +1,20 @@
 import { Button } from '@mui/material';
 import React from 'react';
-import { useToken } from '../../contexts/TokenContext';
-import assembleNewPlaylist from '../../utils/assembleNewPlaylist';
+import { useUserToken } from '../../contexts/UserTokenContext';
+import { useTracks } from '../../contexts/TracksContext';
 import createPlaylistFromUris from '../../utils/createPlaylistFromUris';
 function CreateBtn(props) {
-  const { accessToken } = useToken();
-  const { userId, form } = props;
-
+  const { accessToken, userId } = useUserToken();
+  const { tracks, name } = useTracks();
   const createPlaylist = async () => {
     try {
-      // await createPlaylistFromUris(accessToken, uris, userId, form.playlistName);
+      const uris = tracks.map(track => track.uri)
+      await createPlaylistFromUris(
+        accessToken,
+        uris,
+        userId,
+        name
+      );
     } catch (error) {
       console.error(error);
     }
