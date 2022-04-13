@@ -29,8 +29,20 @@ const darkTheme = {
           background: '#0856EE',
           '&.Mui-disabled': {
             background: '#072270',
-
-          }
+          },
+          '&.MuiButton-outlined': {
+            background: 'none',
+            border: '1px solid white',
+            color: 'white',
+            '&:hover': {
+              border: '1px solid #0856EE',
+              color: '#0856EE',
+            },
+            '&.Mui-disabled': {
+              borderColor: 'gray',
+              color:'gray'
+            },
+          },
         },
       },
     },
@@ -38,24 +50,21 @@ const darkTheme = {
     MuiTableContainer: {
       styleOverrides: {
         root: {
-          background: '#04021E',
-        },
-      },
-    },
-    MuiTableHead: {
-      styleOverrides: {
-        root: {
-          background: '#04021E',
+          background: '#88888824',
         },
       },
     },
     MuiTableCell: {
       styleOverrides: {
         root: {
-          borderBottom: '1px solid #070424',
+          borderBottom: '1px solid white',
         },
         head: {
-          background: '#04021E',
+          background: 'rgb(0, 9, 54)',
+          color: 'white',
+          borderBottom: '1px solid white',
+          borderTop: '1px solid white',
+          fontWeight: 600,
         },
       },
     },

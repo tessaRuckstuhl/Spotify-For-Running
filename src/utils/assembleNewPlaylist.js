@@ -29,6 +29,7 @@ const assembleNewPlaylist = async (
     const trackIds = tracks
       .map((track) => track.track.id)
       .join();
+
     const audioFeatures =
       await TracksService.getTracksAudioFeatures(
         accessToken,

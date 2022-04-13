@@ -35,7 +35,7 @@ function ConfigureBtn(props) {
         !form.playlistName
       }
       loading={loading + ''}
-      variant="contained"
+      variant="outlined"
       onClick={() => setLoading(true)}
     >
       Configure Playlist

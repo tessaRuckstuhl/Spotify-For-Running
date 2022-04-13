@@ -40,7 +40,7 @@ console.log(snack, 'snack')
   };
   return (
     <>
-      <Button variant="contained" onClick={createPlaylist}>
+      <Button variant="outlined" onClick={createPlaylist}>
         Create Playlist
       </Button>
       <Snackbar

@@ -24,9 +24,8 @@ const PreviewTable = () => {
         <TableHead>
           <TableRow>
             <TableCell>Name</TableCell>
-            <TableCell>Tempo</TableCell>
             <TableCell>Artist</TableCell>
-
+            <TableCell>Tempo</TableCell>
             <TableCell align="center">
               Danceability
             </TableCell>
@@ -47,12 +46,13 @@ const PreviewTable = () => {
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
-              <TableCell>{row.tempo}</TableCell>
+
               <TableCell>
                 {row.artists
                   .map((artist) => artist.name)
                   .join()}
               </TableCell>
+              <TableCell>{row.tempo}</TableCell>
               <TableCell align="center">
                 <CircularProgress
                   color="secondary"

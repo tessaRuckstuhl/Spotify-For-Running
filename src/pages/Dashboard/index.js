@@ -20,7 +20,7 @@ function Dashboard() {
             </div>
             <CreatePlaylistForm />
           </div>
-          <div className="flex flex-col space-y-5 px-5">
+          <div className="flex flex-col space-y-5 px-5 w-2/3">
             <div className="text-white text-5xl font-rampart mb-10">
               Preview
             </div>

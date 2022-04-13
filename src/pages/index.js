@@ -3,14 +3,13 @@ import LoginBtn from '../components/Login/LoginBtn';
 
 function Landing() {
   return (
-    <div className="flex flex-row justify-around px-5">
-      <div className="flex flex-col justify-around w-1/3">
-        <div className="text-4xl text-white font-rampart">
+    <div className="flex flex-col items-center ">
+      <div className=" flex flex-col w-1/3">
+        <div className="text-5xl text-white font-rampart mb-12">
           Create your playlist for running
         </div>
         <LoginBtn />
       </div>
-      <img width="50%" src="/img/FinishLine.png" />
     </div>
   );
 }
