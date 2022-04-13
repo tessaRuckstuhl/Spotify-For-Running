@@ -25,6 +25,7 @@ export default {
         });
         return res;
       } catch (error) {
+        console.error('SPOTIFY API ERROR')
         console.error(error);
       }
     } else {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import CreatePlaylistForm from '../../components/CreatePlaylistForm/CreateForm';
 import CreateBtn from '../../components/Preview/CreateBtn';
 import PreviewTable from '../../components/Preview/PreviewTable';

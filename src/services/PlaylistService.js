@@ -32,7 +32,7 @@ export default {
     playlistId,
     uris
   ) => {
-    const res = await SpotifyAPI.performRequest(
+    await SpotifyAPI.performRequest(
       accessToken,
       HTTPMethods.POST,
       `/playlists/${playlistId}/tracks`,

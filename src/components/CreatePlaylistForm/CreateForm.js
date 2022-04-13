@@ -3,7 +3,6 @@ import BpmSlider from './BpmSlider';
 import ConfigureBtn from './ConfigureBtn';
 import InputName from './InputName';
 import SelectMultiplePlaylists from './SelectMultiplePlaylists';
-import UserService from '../../services/UserService';
 import PlaylistService from '../../services/PlaylistService';
 import { useUserToken } from '../../contexts/UserTokenContext';
 
