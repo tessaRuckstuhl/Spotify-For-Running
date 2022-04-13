@@ -6,7 +6,6 @@ const createPlaylistFromUris = async (accessToken, uris, userId, playlistName ) 
         userId,
         playlistName
       );
-      console.log('uris', uris)
 
       await PlaylistService.addTracksToPlaylist(accessToken, createdPlaylist.id, uris);
 }

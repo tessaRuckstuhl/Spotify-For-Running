@@ -5,7 +5,7 @@ const darkTheme = {
       main: '#0856EE',
     },
     secondary: {
-      main: '#8e438e',
+      main: '#f72585',
     },
     text: {
       primary: 'rgba(255,255,255,0.87)',

@@ -9,6 +9,7 @@ function CreateBtn(props) {
   const createPlaylist = async () => {
     try {
       const uris = tracks.map(track => track.uri)
+      console.log(uris.length)
       await createPlaylistFromUris(
         accessToken,
         uris,

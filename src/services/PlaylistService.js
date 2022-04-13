@@ -32,7 +32,6 @@ export default {
     playlistId,
     uris
   ) => {
-    console.log(uris, uris.length);
     const res = await SpotifyAPI.performRequest(
       accessToken,
       HTTPMethods.POST,

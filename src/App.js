@@ -9,7 +9,7 @@ function App() {
   const theme = createTheme(darkTheme);
   return (
     <ThemeProvider theme={theme}>
-      <div className="bg-darkerBlue h-screen">
+      <div className="h-screen">
         <Header />
         <BrowserRouter>
           <Routes>

@@ -36,12 +36,22 @@ const assembleNewPlaylist = async (
       );
 
     const tracksFeatures = audioFeatures
-      .map((track, idx) => ({ tempo:track.tempo, ...tracks[idx].track }))
+      .map((track, idx) => ({
+        tempo: track.tempo,
+        danceability: track.danceability,
+        energy: track.energy,
+        liveness: track.liveness,
+        ...tracks[idx].track,
+      }))
       .filter(
         (track) =>
           track.tempo >= range[0] && track.tempo <= range[1]
       );
-    console.log('tracksfeatures full',tracksFeatures);
+    console.log(
+      'tracksfeatures full',
+      tracksFeatures,
+      audioFeatures[0]
+    );
 
     return tracksFeatures;
   } catch (error) {

@@ -5,6 +5,7 @@ function BpmSlider(props) {
 
   return (
       <Slider
+      size='small'
         min={0}
         max={200}
         value={value}
