@@ -40,7 +40,7 @@ console.log(snack, 'snack')
   };
   return (
     <>
-      <Button variant="outlined" onClick={createPlaylist}>
+      <Button disabled={tracks.length == 0} variant="outlined" onClick={createPlaylist}>
         Create Playlist
       </Button>
       <Snackbar
