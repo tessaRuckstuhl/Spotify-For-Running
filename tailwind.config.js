@@ -13,9 +13,11 @@ module.exports = {
       black:'#000000'
     },
     fontFamily: {
-      rampart: ['Rampart One'],
-      reenie: ['Reenie Beanie']
+      reenie: ['Reenie Beanie'],
+      londrinaSolid: ['Londrina Solid'],
+      londrinaShadow: ['Londrina Shadow']
     },
+    
     fontSize: {
       'xs': '12px',
       'sm': '14px',

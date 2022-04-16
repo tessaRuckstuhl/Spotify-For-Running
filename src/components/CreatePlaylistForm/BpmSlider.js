@@ -4,7 +4,8 @@ function BpmSlider(props) {
   const { value, onChange, name } = props;
 
   return (
-      <Slider
+    <>      <div className='font-londrinaSolid'>Choose a range for bpm</div>
+          <Slider
       size='small'
         min={0}
         max={200}
@@ -13,6 +14,8 @@ function BpmSlider(props) {
         onChange={onChange}
         valueLabelDisplay="auto"
       />
+    </>
+
   );
 }
 export default BpmSlider;

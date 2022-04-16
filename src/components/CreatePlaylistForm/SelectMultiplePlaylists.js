@@ -16,7 +16,11 @@ function SelectMultiplePlaylists(props) {
     onChange,
   } = props;
   return (
-    <div>
+    <>
+      <div className="font-londrinaSolid">
+        Select playlists to integrate
+      </div>
+
       <FormControl sx={{ m: 1, width: '100%', margin: 0 }}>
         <InputLabel id="select-playlists-checkbox-label">
           Playlists
@@ -29,7 +33,9 @@ function SelectMultiplePlaylists(props) {
           value={value}
           onChange={onChange}
           input={<OutlinedInput label="Playlists" />}
-          renderValue={(selected) => {return selected.join(', ')}}
+          renderValue={(selected) => {
+            return selected.join(', ');
+          }}
         >
           {usersPlaylistsIds.map((playlistId, idx) => (
             <MenuItem key={playlistId} value={playlistId}>
@@ -41,7 +47,7 @@ function SelectMultiplePlaylists(props) {
           ))}
         </Select>
       </FormControl>
-    </div>
+    </>
   );
 }
 

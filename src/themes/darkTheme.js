@@ -1,15 +1,22 @@
 const darkTheme = {
+  typography: {
+    fontFamily: `"Londrina Solid", "Helvetica", "Arial", sans-serif`,
+    fontSize: 14,
+    fontWeightLight: 300,
+    fontWeightRegular: 400,
+    fontWeightMedium: 500,
+  },
   palette: {
     type: 'dark',
     primary: {
-      main: '#0856EE',
+      main: 'rgb(100, 116, 139)',
     },
     secondary: {
-      main: '#f72585',
+      main: '#4b6197',
     },
     text: {
-      primary: 'rgba(255,255,255,0.87)',
-      secondary: '#fff',
+      primary: '#000000',
+      secondary: '#000000',
     },
     background: {
       paper: '#252525',
@@ -17,30 +24,30 @@ const darkTheme = {
     },
   },
   components: {
-    MuiOutlinedInput: {
+    MuiFormLabel: {
       styleOverrides: {
-        root: { color: 'white' },
+        root: {
+          fontWeight: 300,
+          // border: '1px solid black',
+        },
       },
     },
     // Button
     MuiButton: {
       styleOverrides: {
         root: {
-          background: '#0856EE',
           '&.Mui-disabled': {
-            background: '#072270',
+            color: '#545454',
           },
           '&.MuiButton-outlined': {
             background: 'none',
-            border: '1px solid white',
-            color: 'white',
             '&:hover': {
-              border: '1px solid #0856EE',
-              color: '#0856EE',
+              border: '1px solid rgb(100, 116, 139)',
+              color: 'rgb(100, 116, 139)',
             },
             '&.Mui-disabled': {
-              borderColor: 'gray',
-              color:'gray'
+              borderColor: '#545454',
+              color: '#545454',
             },
           },
         },
@@ -50,28 +57,61 @@ const darkTheme = {
     MuiTableContainer: {
       styleOverrides: {
         root: {
-          background: '#88888824',
+          background: 'transparent',
+          boxShadow: 'none',
+        },
+      },
+    },
+    MuiTable: {
+      styleOverrides: {
+        root: {
+          // display: 'block',
+          // minWidth: 450
+        },
+      },
+    },
+    MuiTableHead: {
+      styleOverrides: {
+        root: {
+          tableLayout: 'fixed',
+        },
+      },
+    },
+    MuiTableBody: {
+      styleOverrides: {
+        root: {
+          overflow: 'auto',
+          height: '450px',
+          display: 'block',
+        },
+      },
+    },
+    MuiTableRow: {
+      styleOverrides: {
+        root: {
+          display: 'table',
+          width: '100%',
+          tableLayout: 'fixed',
         },
       },
     },
     MuiTableCell: {
       styleOverrides: {
         root: {
-          borderBottom: '1px solid white',
+          borderBottom: '1px solid #88888824',
+          fontWeight:200
         },
         head: {
-          background: 'rgb(0, 9, 54)',
-          color: 'white',
-          borderBottom: '1px solid white',
-          borderTop: '1px solid white',
-          fontWeight: 600,
+          background: 'transparent',
+          color: '#000000',
+          fontWeight: 400,
         },
       },
     },
     MuiPaper: {
       styleOverrides: {
         root: {
-          background: '#04021E',
+          background: 'rgb(218 216 203)',
         },
       },
     },

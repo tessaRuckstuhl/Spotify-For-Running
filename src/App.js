@@ -5,16 +5,19 @@ import Header from './layouts/Header/Header';
 import Dashboard from './pages/Dashboard';
 import darkTheme from './themes/darkTheme';
 import {createTheme, ThemeProvider} from '@mui/material/styles'
+import About from './pages/About/about';
 function App() {
   const theme = createTheme(darkTheme);
   return (
     <ThemeProvider theme={theme}>
-      <div className="h-screen">
+      <div className='flex flex-col'>
         <Header />
         <BrowserRouter>
           <Routes>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/" element={<Landing />} />
+            <Route path="/about" element={<About />} />
+
           </Routes>
         </BrowserRouter>
       </div>
