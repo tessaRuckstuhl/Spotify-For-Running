@@ -31,7 +31,7 @@ function ConfigureBtn(props) {
     try {
       const tracks = await assembleNewPlaylist(
         accessToken,
-        form.selectedPlaylistsIds,
+        form.selectedPlaylists,
         form.bpm
       );
       setName(form.playlistName);
@@ -43,7 +43,7 @@ function ConfigureBtn(props) {
   return (
     <LoadingButton
       disabled={
-        form.selectedPlaylistsIds.length == 0 ||
+        form.selectedPlaylists.length == 0 ||
         !form.playlistName
       }
       color="secondary"

@@ -8,14 +8,12 @@ import { useUserToken } from '../../contexts/UserTokenContext';
 
 function CreatePlaylistForm() {
   const [usersPlaylists, setUsersPlaylists] = useState([]);
-  const [usersPlaylistsIds, setUsersPlaylistsIds] =
-    useState([]);
 
   const { accessToken, userId } = useUserToken();
 
   const [form, setForm] = useState({
     playlistName: '',
-    selectedPlaylistsIds: [],
+    selectedPlaylists: [],
     bpm: [120, 140],
   });
 
@@ -37,8 +35,9 @@ function CreatePlaylistForm() {
         accessToken,
         userId
       );
-      setUsersPlaylists(playlists.map((p) => p.name));
-      setUsersPlaylistsIds(playlists.map((p) => p.id));
+      setUsersPlaylists(
+        playlists.map((p) => ({ name: p.name, id: p.id }))
+      );
     } catch (error) {
       console.log(error);
     }
@@ -56,11 +55,10 @@ function CreatePlaylistForm() {
         onChange={handleFormChange}
       />
       <SelectMultiplePlaylists
-        name={'selectedPlaylistsIds'}
-        value={form.selectedPlaylistsIds}
+        name={'selectedPlaylists'}
+        value={form.selectedPlaylists}
         onChange={handleFormChange}
         usersPlaylists={usersPlaylists}
-        usersPlaylistsIds={usersPlaylistsIds}
       />
       <ConfigureBtn userId={userId} form={form} />
     </div>

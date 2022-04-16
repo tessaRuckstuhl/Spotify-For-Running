@@ -10,11 +10,11 @@ import Checkbox from '@mui/material/Checkbox';
 function SelectMultiplePlaylists(props) {
   const {
     usersPlaylists,
-    usersPlaylistsIds,
     name,
     value,
     onChange,
   } = props;
+  console.log(value, usersPlaylists)
   return (
     <>
       <div className="font-londrinaSolid font-light">
@@ -34,15 +34,15 @@ function SelectMultiplePlaylists(props) {
           onChange={onChange}
           input={<OutlinedInput label="Playlists" />}
           renderValue={(selected) => {
-            return selected.join(', ');
+            return selected.map(s => s.name).join(', ');
           }}
         >
-          {usersPlaylistsIds.map((playlistId, idx) => (
-            <MenuItem key={playlistId} value={playlistId}>
+          {usersPlaylists.map((p) => (
+            <MenuItem key={p.id} value={p}>
               <Checkbox
-                checked={value.indexOf(playlistId) > -1}
+                checked={value.indexOf(p) > -1}
               />
-              <ListItemText primary={usersPlaylists[idx]} />
+              <ListItemText primary={p.name} />
             </MenuItem>
           ))}
         </Select>

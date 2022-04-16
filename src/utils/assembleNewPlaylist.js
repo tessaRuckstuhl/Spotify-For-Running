@@ -11,10 +11,11 @@ import TracksService from '../services/TracksService';
 
 const assembleNewPlaylist = async (
   accessToken,
-  playlistIds,
+  playlists,
   range
 ) => {
   try {
+    const playlistIds = playlists.map((p) => p.id);
     let tracks = [];
     // get all tracks for playlist ids
     for (const pId of playlistIds) {
