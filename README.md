@@ -14,11 +14,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
@@ -31,4 +26,9 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 # Spotify-For-Running
 
+Production ready build can be found here:
+
 [https://spotify-for-running.netlify.app/](https://spotify-for-running.netlify.app/)
+
+# Other
+ /backend and server.js is deprecated. Authorization [Authorization Code Flow](https://developer.spotify.com/documentation/general/guides/authorization/code-flow/) is handled in frontend only.
