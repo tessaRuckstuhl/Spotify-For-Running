@@ -1,4 +1,3 @@
-import { Snackbar } from '@mui/material';
 import React, { useState } from 'react';
 import { useUserToken } from '../../contexts/UserTokenContext';
 import { useTracks } from '../../contexts/TracksContext';
