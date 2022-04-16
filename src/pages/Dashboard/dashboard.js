@@ -1,7 +1,5 @@
 import React from 'react';
 import CreatePlaylistForm from '../../components/CreatePlaylistForm/CreateForm';
-import CreateBtn from '../../components/Preview/CreateBtn';
-import PreviewTable from '../../components/Preview/PreviewTable';
 import { UserTokenContextProvider } from '../../contexts/UserTokenContext';
 import { TracksContextProvider } from '../../contexts/TracksContext';
 import InfoText from '../../components/CreatePlaylistForm/InfoText';
