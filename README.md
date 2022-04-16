@@ -1,3 +1,10 @@
+
+# Spotify-For-Running
+
+Production ready build can be found here:
+
+[https://spotify-for-running.netlify.app/](https://spotify-for-running.netlify.app/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -23,12 +30,6 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-# Spotify-For-Running
-
-Production ready build can be found here:
-
-[https://spotify-for-running.netlify.app/](https://spotify-for-running.netlify.app/)
 
 # Other
  /backend and server.js is deprecated. Authorization [Authorization Code Flow](https://developer.spotify.com/documentation/general/guides/authorization/code-flow/) is handled in frontend only.
