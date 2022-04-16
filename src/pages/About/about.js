@@ -2,7 +2,7 @@ import React from 'react';
 
 function About() {
   return (
-    <div className="text-center font-londrinaSolid text-xl font-light">
+    <div className="h-[calc(100vh-6rem)] text-center font-londrinaSolid text-xl font-light">
       Hey, are you new here?
       <br />
       Contact{' '}
