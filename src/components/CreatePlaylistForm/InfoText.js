@@ -5,11 +5,11 @@ function InfoText() {
   return (
     <>
       <div className="mb-10 ">
-        <div className="sm:text-5xl text-3xl font-londrinaShadow ">
+        <div className="font-londrinaShadow text-3xl sm:text-5xl ">
           {' '}
           Welcome, {userName}!
         </div>
-        <div className="sm:text-3xl text-1xl font-londrinaSolid">
+        <div className="text-1xl font-londrinaSolid sm:text-3xl">
           It is good to see you.
           <br />
           Start configuring your playlist for running.

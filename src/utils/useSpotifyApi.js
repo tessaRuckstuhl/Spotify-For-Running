@@ -9,7 +9,12 @@ export default {
    * @param {object} data - payload
    * @return Object
    */
-  performRequest: async (token, method, url, data = null) => {
+  performRequest: async (
+    token,
+    method,
+    url,
+    data = null
+  ) => {
     const SPOTIFY_API = 'https://api.spotify.com/v1';
     if (token) {
       const options = {
@@ -25,7 +30,7 @@ export default {
         });
         return res;
       } catch (error) {
-        console.error('SPOTIFY API ERROR')
+        console.error('SPOTIFY API ERROR');
         console.error(error);
       }
     } else {

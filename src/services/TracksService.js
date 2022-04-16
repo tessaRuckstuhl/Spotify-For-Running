@@ -29,7 +29,7 @@ export default {
       Math.round(numTracks.length / 100) > 0
         ? Math.round(numTracks.length / 100)
         : 1;
-        
+
     const res = [];
     for (const i of [...Array(iterations).keys()]) {
       const batch = numTracks.slice(i * 100, (i + 1) * 100);

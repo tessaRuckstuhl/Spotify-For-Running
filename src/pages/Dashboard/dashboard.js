@@ -10,20 +10,20 @@ function Dashboard() {
   return (
     <UserTokenContextProvider>
       <TracksContextProvider>
-        <div className="flex flex-col px-5 justify-evenly items-start">
-          <div className="flex flex-col w-5/6 sm:w-2/5 justify-start self-center sm:px-5 h-[calc(100vh-6rem)] box-content ">
+        <div className="flex flex-col items-start justify-evenly px-5">
+          <div className="box-content flex h-[calc(100vh-6rem)] w-5/6 flex-col justify-start self-center sm:w-2/5 sm:px-5 ">
             <InfoText />
             <CreatePlaylistForm />
           </div>
           <div
             id="playlistPreview"
-            className="flex flex-col px-5 w-5/6 sm:w-2/3 self-center h-[calc(100vh-6rem)] box-content space-y-5 mb-5"
+            className="mb-5 box-content flex h-[calc(100vh-6rem)] w-5/6 flex-col space-y-5 self-center px-5 sm:w-2/3"
           >
             <div>
-              <div className="sm:text-5xl text-3xl font-londrinaShadow">
+              <div className="font-londrinaShadow text-3xl sm:text-5xl">
                 Preview
               </div>
-              <div className="sm:text-3xl text-1xl font-londrinaSolid">
+              <div className="text-1xl font-londrinaSolid sm:text-3xl">
                 Happy with the result? Save it to your
                 spotify now.
               </div>

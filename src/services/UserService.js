@@ -3,7 +3,11 @@ import SpotifyAPI from '../utils/useSpotifyApi';
 
 export default {
   getCurrentUser: async (accessToken) => {
-    const res = await SpotifyAPI.performRequest(accessToken, HTTPMethods.GET, '/me');
+    const res = await SpotifyAPI.performRequest(
+      accessToken,
+      HTTPMethods.GET,
+      '/me'
+    );
     return res.data;
   },
 };

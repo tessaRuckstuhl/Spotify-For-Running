@@ -12,7 +12,7 @@ const UserTokenContext = createContext();
 export function UserTokenContextProvider({ children }) {
   const [accessToken, setAccessToken] = useState('');
   const [userId, setUserId] = useState('');
-  const [userName, setUserName] = useState('')
+  const [userName, setUserName] = useState('');
 
   useEffect(() => {
     if (window.location.hash) {
@@ -33,16 +33,18 @@ export function UserTokenContextProvider({ children }) {
       const user = await UserService.getCurrentUser(
         accessToken
       );
-      console.log(user)
+      console.log(user);
       setUserId(user.id);
-      setUserName(user.display_name)
+      setUserName(user.display_name);
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <UserTokenContext.Provider value={{ accessToken, userId, userName }}>
+    <UserTokenContext.Provider
+      value={{ accessToken, userId, userName }}
+    >
       {children}
     </UserTokenContext.Provider>
   );

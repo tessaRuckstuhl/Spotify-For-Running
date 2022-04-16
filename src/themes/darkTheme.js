@@ -99,7 +99,7 @@ const darkTheme = {
       styleOverrides: {
         root: {
           borderBottom: '1px solid #88888824',
-          fontWeight:200
+          fontWeight: 200,
         },
         head: {
           background: 'transparent',

@@ -17,7 +17,9 @@ function generateRandomString(length) {
     'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
   for (var i = 0; i < length; i++) {
-    text += possible.charAt(Math.floor(Math.random() * possible.length));
+    text += possible.charAt(
+      Math.floor(Math.random() * possible.length)
+    );
   }
   return text;
 }
@@ -46,7 +48,9 @@ router.get('/callback', function (req, res) {
   console.log(req.query.state, req.cookies[stateKey]);
   var code = req.query.code || null;
   var state = req.query.state || null;
-  var storedState = req.cookies ? req.cookies[stateKey] : null;
+  var storedState = req.cookies
+    ? req.cookies[stateKey]
+    : null;
 
   if (state === null || state !== storedState) {
     res.redirect(
@@ -68,45 +72,55 @@ router.get('/callback', function (req, res) {
         Authorization:
           'Basic ' +
           new Buffer(
-            process.env.CLIENT_ID + ':' + process.env.CLIENT_SECRET
+            process.env.CLIENT_ID +
+              ':' +
+              process.env.CLIENT_SECRET
           ).toString('base64'),
       },
       json: true,
     };
 
-    request.post(authOptions, function (error, response, body) {
-      if (!error && response.statusCode === 200) {
-        var access_token = body.access_token,
-          refresh_token = body.refresh_token;
+    request.post(
+      authOptions,
+      function (error, response, body) {
+        if (!error && response.statusCode === 200) {
+          var access_token = body.access_token,
+            refresh_token = body.refresh_token;
 
-        var options = {
-          url: 'https://api.spotify.com/v1/me',
-          headers: { Authorization: 'Bearer ' + access_token },
-          json: true,
-        };
+          var options = {
+            url: 'https://api.spotify.com/v1/me',
+            headers: {
+              Authorization: 'Bearer ' + access_token,
+            },
+            json: true,
+          };
 
-        // use the access token to access the Spotify Web API
-        request.get(options, function (error, response, body) {
-          console.log(body);
-        });
+          // use the access token to access the Spotify Web API
+          request.get(
+            options,
+            function (error, response, body) {
+              console.log(body);
+            }
+          );
 
-        // pass the token to the browser to make requests from there
-        res.redirect(
-          'http://localhost:3000/dashboard#' +
-            querystring.stringify({
-              access_token: access_token,
-              refresh_token: refresh_token,
-            })
-        );
-      } else {
-        res.redirect(
-          'http://localhost:3000' +
-            querystring.stringify({
-              error: 'invalid_token',
-            })
-        );
+          // pass the token to the browser to make requests from there
+          res.redirect(
+            'http://localhost:3000/dashboard#' +
+              querystring.stringify({
+                access_token: access_token,
+                refresh_token: refresh_token,
+              })
+          );
+        } else {
+          res.redirect(
+            'http://localhost:3000' +
+              querystring.stringify({
+                error: 'invalid_token',
+              })
+          );
+        }
       }
-    });
+    );
   }
 });
 
@@ -119,7 +133,9 @@ router.get('/refresh_token', function (req, res) {
       Authorization:
         'Basic ' +
         new Buffer(
-          process.env.CLIENT_ID + ':' + process.env.CLIENT_SECRET
+          process.env.CLIENT_ID +
+            ':' +
+            process.env.CLIENT_SECRET
         ).toString('base64'),
     },
     form: {
@@ -129,14 +145,17 @@ router.get('/refresh_token', function (req, res) {
     json: true,
   };
 
-  request.post(authOptions, function (error, response, body) {
-    if (!error && response.statusCode === 200) {
-      var access_token = body.access_token;
-      res.send({
-        access_token: access_token,
-      });
+  request.post(
+    authOptions,
+    function (error, response, body) {
+      if (!error && response.statusCode === 200) {
+        var access_token = body.access_token;
+        res.send({
+          access_token: access_token,
+        });
+      }
     }
-  });
+  );
 });
 
 module.exports = router;

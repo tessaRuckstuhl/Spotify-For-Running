@@ -1,14 +1,14 @@
 import React from 'react';
 function Header() {
   return (
-    <div className='flex justify-between h-24'>
+    <div className="flex h-24 justify-between">
       <a href="/">
-        <div className="text-xl font-reenie tracking-widest px-8 py-6">
+        <div className="px-8 py-6 font-reenie text-xl tracking-widest">
           TJR
         </div>
       </a>
       <a href="/about">
-        <div className="text-l font-light font-londrinaSolid px-8 py-6">
+        <div className="text-l px-8 py-6 font-londrinaSolid font-light">
           About
         </div>
       </a>

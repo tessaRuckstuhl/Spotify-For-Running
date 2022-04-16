@@ -8,10 +8,12 @@ const TracksContext = createContext();
 
 export function TracksContextProvider({ children }) {
   const [tracks, setTracks] = useState([]);
-  const [name, setName] = useState('')
+  const [name, setName] = useState('');
 
   return (
-    <TracksContext.Provider value={{ tracks, setTracks, setName, name }}>
+    <TracksContext.Provider
+      value={{ tracks, setTracks, setName, name }}
+    >
       {children}
     </TracksContext.Provider>
   );
