@@ -14,14 +14,11 @@ const PreviewTable = () => {
   return (
     <>
       {tracks.length > 0 ? (
-        <TableContainer
-          component={Paper}
-          // sx={{ maxHeight: 440, minHeight: 300 }}
-        >
+        <TableContainer component={Paper}>
           <Table
             sx={{ minWidth: 450 }}
             aria-label="simple table"
-            >
+          >
             <TableHead>
               <TableRow>
                 <TableCell>Name</TableCell>
@@ -50,7 +47,6 @@ const PreviewTable = () => {
                   <TableCell component="th" scope="row">
                     {row.name}
                   </TableCell>
-
                   <TableCell component="th">
                     {row.artists
                       .map((artist) => artist.name)
