@@ -29,3 +29,6 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 Production ready build can be found here:
 
 [https://spotify-for-running.netlify.app/](https://spotify-for-running.netlify.app/)
+
+# Other
+ /backend and server.js is deprecated. Authorization [Authorization Code Flow](https://developer.spotify.com/documentation/general/guides/authorization/code-flow/) is handled in frontend only.
