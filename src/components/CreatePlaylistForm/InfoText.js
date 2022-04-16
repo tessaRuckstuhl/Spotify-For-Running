@@ -10,8 +10,8 @@ function InfoText() {
           Welcome, {userName}!
         </div>
         <div className="text-3xl font-londrinaSolid">
-            It is good to see you.
-          {' '}
+          It is good to see you.
+          <br />
           Start configuring your playlist for running.
         </div>
       </div>

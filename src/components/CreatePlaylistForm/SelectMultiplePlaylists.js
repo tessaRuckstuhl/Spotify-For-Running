@@ -17,8 +17,8 @@ function SelectMultiplePlaylists(props) {
   } = props;
   return (
     <>
-      <div className="font-londrinaSolid">
-        Select playlists to integrate
+      <div className="font-londrinaSolid font-light">
+        ...and finally, select playlists to merge.
       </div>
 
       <FormControl sx={{ m: 1, width: '100%', margin: 0 }}>

@@ -4,7 +4,7 @@ function InputName(props) {
   const { value, onChange, name } = props;
   return (
     <>
-      <div className='font-londrinaSolid'>Playlist&apos;s name</div>
+      <div className='font-londrinaSolid font-light'>First, choose a playlist&apos;s name...</div>
       <TextField
         id="playlist-name-input"
         label="Name"
