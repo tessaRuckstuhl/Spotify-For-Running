@@ -14,7 +14,7 @@ function Dashboard() {
             <InfoText />
             <CreatePlaylistForm />
           </div>
-         <Preview/>
+          <Preview />
         </div>
       </TracksContextProvider>
     </UserTokenContextProvider>

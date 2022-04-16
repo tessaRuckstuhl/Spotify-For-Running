@@ -3,7 +3,9 @@ import { useUserToken } from '../../contexts/UserTokenContext';
 import { useTracks } from '../../contexts/TracksContext';
 import assembleNewPlaylist from '../../utils/assembleNewPlaylist';
 import { LoadingButton } from '@mui/lab';
+import { useErrorSnack } from '../../contexts/ErrorContext';
 function ConfigureBtn(props) {
+  const { setError } = useErrorSnack();
   const { accessToken } = useUserToken();
   const { setTracks, setName, tracks } = useTracks();
   const [loading, setLoading] = useState(false);
@@ -34,6 +36,12 @@ function ConfigureBtn(props) {
         form.selectedPlaylists,
         form.bpm
       );
+      if (tracks.length == 0) {
+        setLoading(false);
+        setError(
+          'No tracks match your configurations. Try reconfiguring.'
+        );
+      }
       setName(form.playlistName);
       setTracks(tracks);
     } catch (error) {

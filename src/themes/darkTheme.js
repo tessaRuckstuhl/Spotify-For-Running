@@ -111,11 +111,11 @@ const darkTheme = {
     MuiTooltip: {
       styleOverrides: {
         tooltip: {
-          fontWeight:200,
-          background:'#000000',
-          fontSize:'0.8rem'
-        }
-      }
+          fontWeight: 200,
+          background: '#000000',
+          fontSize: '0.8rem',
+        },
+      },
     },
     MuiSlider: {
       styleOverrides: {
@@ -123,9 +123,8 @@ const darkTheme = {
           color: '#000000',
         },
         valueLabel: {
-          background:'#000000'
-        }
-
+          background: '#000000',
+        },
       },
     },
     MuiPaper: {

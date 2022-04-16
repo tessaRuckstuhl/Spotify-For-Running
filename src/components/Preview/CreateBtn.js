@@ -4,17 +4,14 @@ import { useUserToken } from '../../contexts/UserTokenContext';
 import { useTracks } from '../../contexts/TracksContext';
 import PlaylistService from '../../services/PlaylistService';
 import { LoadingButton } from '@mui/lab';
+import { useErrorSnack } from '../../contexts/ErrorContext';
 function CreateBtn() {
-  const [snack, setSnack] = useState({
-    open: false,
-    message: '',
-  });
+  const { setError } = useErrorSnack();
+
   const [loading, setLoading] = useState(false);
   const { accessToken, userId } = useUserToken();
   const { tracks, name } = useTracks();
-  const handleClose = () => {
-    setSnack({ open: false, message: '' });
-  };
+
   const createPlaylist = async () => {
     try {
       setLoading(true);
@@ -32,16 +29,10 @@ function CreateBtn() {
         uris
       );
       setLoading(false);
-      setSnack({
-        open: true,
-        message: 'Playlist created successfully!',
-      });
+      setError('Playlist created successfully!');
     } catch (error) {
       console.error(error);
-      setSnack({
-        open: true,
-        message: 'An error occurred.',
-      });
+      setError('An error occurred.');
     }
   };
   return (
@@ -56,16 +47,6 @@ function CreateBtn() {
       >
         Create Playlist in Spotify
       </LoadingButton>
-      <Snackbar
-        anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'center',
-        }}
-        open={snack.open}
-        message={snack.message}
-        autoHideDuration={6000}
-        onClose={handleClose}
-      />
     </>
   );
 }
