@@ -33,7 +33,6 @@ export function UserTokenContextProvider({ children }) {
       const user = await UserService.getCurrentUser(
         accessToken
       );
-      console.log(user);
       setUserId(user.id);
       setUserName(user.display_name);
     } catch (error) {

@@ -48,11 +48,6 @@ const assembleNewPlaylist = async (
         (track) =>
           track.tempo >= range[0] && track.tempo <= range[1]
       );
-    console.log(
-      'tracksfeatures full',
-      tracksFeatures,
-      audioFeatures[0]
-    );
 
     return tracksFeatures;
   } catch (error) {

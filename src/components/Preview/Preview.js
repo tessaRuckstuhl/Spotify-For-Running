@@ -13,13 +13,13 @@ function Preview() {
           id="playlistPreview"
           className="mb-5 box-content flex h-[calc(100vh-6rem)] w-5/6 flex-col space-y-5 self-center px-5 sm:w-2/3"
         >
-          <div>
+          <div className="text-center">
             <div className="font-londrinaShadow text-3xl sm:text-5xl">
-              Preview
+              Your playlist preview
             </div>
             <div className="text-1xl font-londrinaSolid sm:text-3xl">
-              Happy with the result? Save it to your spotify
-              now.
+              Happy with the result? Save playlist to your
+              Spotify now.
             </div>
           </div>
           <PreviewTable />

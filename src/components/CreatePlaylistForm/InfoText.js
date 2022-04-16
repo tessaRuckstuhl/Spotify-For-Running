@@ -4,7 +4,7 @@ function InfoText() {
   const { userName } = useUserToken();
   return (
     <>
-      <div className="mb-10 ">
+      <div className="mb-10 text-center">
         <div className="font-londrinaShadow text-3xl sm:text-5xl ">
           {' '}
           Welcome, {userName}!

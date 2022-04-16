@@ -12,7 +12,7 @@ function About() {
       >
         me
       </a>{' '}
-      for questions
+      for questions.
     </div>
   );
 }

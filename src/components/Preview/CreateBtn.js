@@ -12,7 +12,6 @@ function CreateBtn() {
   const [loading, setLoading] = useState(false);
   const { accessToken, userId } = useUserToken();
   const { tracks, name } = useTracks();
-  console.log(snack, 'snack');
   const handleClose = () => {
     setSnack({ open: false, message: '' });
   };
@@ -55,12 +54,12 @@ function CreateBtn() {
         variant="contained"
         onClick={createPlaylist}
       >
-        Create Playlist
+        Create Playlist in Spotify
       </LoadingButton>
       <Snackbar
         anchorOrigin={{
           vertical: 'bottom',
-          horizontal: 'top',
+          horizontal: 'center',
         }}
         open={snack.open}
         message={snack.message}
