@@ -1,6 +1,7 @@
 const authEndpoint =
   'https://accounts.spotify.com/authorize';
-const redirectUri = 'http://localhost:3000/dashboard';
+const redirectUri =
+  'https://spotify-for-running.netlify.app/dashboard';
 const clientId = '923c29a25aa44297acb7d02de68b1535';
 const scopes =
   'user-read-private user-read-email playlist-modify-private playlist-modify-public';
