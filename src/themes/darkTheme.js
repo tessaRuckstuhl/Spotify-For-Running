@@ -28,7 +28,6 @@ const darkTheme = {
       styleOverrides: {
         root: {
           fontWeight: 300,
-          // border: '1px solid black',
         },
       },
     },
@@ -59,14 +58,6 @@ const darkTheme = {
         root: {
           background: 'transparent',
           boxShadow: 'none',
-        },
-      },
-    },
-    MuiTable: {
-      styleOverrides: {
-        root: {
-          // display: 'block',
-          // minWidth: 450
         },
       },
     },

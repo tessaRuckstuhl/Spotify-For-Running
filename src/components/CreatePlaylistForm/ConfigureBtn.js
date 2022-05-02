@@ -5,7 +5,7 @@ import assembleNewPlaylist from '../../utils/assembleNewPlaylist';
 import { LoadingButton } from '@mui/lab';
 import { useErrorSnack } from '../../contexts/ErrorContext';
 function ConfigureBtn(props) {
-  const { setError } = useErrorSnack();
+  const { showSnack } = useErrorSnack();
   const { accessToken } = useUserToken();
   const { setTracks, setName, tracks } = useTracks();
   const [loading, setLoading] = useState(false);
@@ -38,7 +38,7 @@ function ConfigureBtn(props) {
       );
       if (tracks.length == 0) {
         setLoading(false);
-        setError(
+        showSnack(
           'No tracks match your configurations. Try reconfiguring.'
         );
       }

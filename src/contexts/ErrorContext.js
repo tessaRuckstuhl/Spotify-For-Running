@@ -13,7 +13,8 @@ export function ErrorContextProvider({ children }) {
     message: '',
   });
 
-  const setError = (msg) => {
+
+  const showSnack = (msg) => {
     setSnack({ open: true, message: msg });
   };
 
@@ -22,7 +23,7 @@ export function ErrorContextProvider({ children }) {
   };
   return (
     <ErrorContext.Provider
-      value={{ snack, setSnack, setError }}
+      value={{ snack, showSnack }}
     >
       {children}
       <Snackbar

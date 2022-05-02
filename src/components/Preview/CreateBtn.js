@@ -5,7 +5,7 @@ import PlaylistService from '../../services/PlaylistService';
 import { LoadingButton } from '@mui/lab';
 import { useErrorSnack } from '../../contexts/ErrorContext';
 function CreateBtn() {
-  const { setError } = useErrorSnack();
+  const { showSnack } = useErrorSnack();
 
   const [loading, setLoading] = useState(false);
   const { accessToken, userId } = useUserToken();
@@ -28,10 +28,10 @@ function CreateBtn() {
         uris
       );
       setLoading(false);
-      setError('Playlist created successfully!');
+      showSnack('Playlist created successfully!');
     } catch (error) {
       console.error(error);
-      setError('An error occurred.');
+      showSnack('An error occurred.');
     }
   };
   return (

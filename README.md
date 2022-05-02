@@ -31,5 +31,11 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+# Spotify-For-Running
+
+Production ready build is deployed to:
+
+[https://spotify-for-running.netlify.app/](https://spotify-for-running.netlify.app/)
+
 # Other
  /backend and server.js is deprecated. Authorization [Authorization Code Flow](https://developer.spotify.com/documentation/general/guides/authorization/code-flow/) is handled in frontend only.

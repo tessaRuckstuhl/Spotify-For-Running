@@ -32,6 +32,8 @@ export default {
       } catch (error) {
         console.error('SPOTIFY API ERROR');
         console.error(error);
+        throw(error)
+
       }
     } else {
       throw 'invalid method to perform axios request';
