@@ -7,11 +7,18 @@ function Header() {
           TJR
         </div>
       </a>
-      <a href="/about">
-        <div className="text-l px-8 py-6 font-londrinaSolid font-light">
-          About
-        </div>
-      </a>
+      <div className="flex text-l py-6 font-londrinaSolid font-light">
+        <a href="/about">
+          <div>
+            About
+          </div>
+        </a>
+        <a href="https://github.com/tessaRuckstuhl/Spotify-For-Running">
+          <div className="px-8">
+            Code
+          </div>
+        </a>
+      </div>
     </div>
   );
 }

@@ -6,13 +6,17 @@ import React, {
 } from 'react';
 import UserService from '../services/UserService';
 import decodeHashParams from '../utils/decodeHashParams';
+import ErrorContext from './ErrorContext';
 
 const UserTokenContext = createContext();
 
 export function UserTokenContextProvider({ children }) {
+  const {showSnack} = useContext(ErrorContext)
+  // console.log(t)
   const [accessToken, setAccessToken] = useState('');
   const [userId, setUserId] = useState('');
   const [userName, setUserName] = useState('');
+
 
   useEffect(() => {
     if (window.location.hash) {
@@ -36,7 +40,12 @@ export function UserTokenContextProvider({ children }) {
       setUserId(user.id);
       setUserName(user.display_name);
     } catch (error) {
-      console.log(error);
+      setUserName('???')
+      console.log(error)
+      if(error.response.status == 403){
+        console.log(error.response.data, error.response)
+        showSnack(`${error.response.data} - This app won't work for you until I register your account`)
+      }
     }
   };
 

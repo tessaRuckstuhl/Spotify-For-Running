@@ -26,7 +26,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 # Spotify-For-Running
 
-Production ready build can be found here:
+Production ready build is deployed to:
 
 [https://spotify-for-running.netlify.app/](https://spotify-for-running.netlify.app/)
 
