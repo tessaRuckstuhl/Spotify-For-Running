@@ -1,6 +1,8 @@
 
 # Spotify-For-Running
 
+Reach out to me to get access.
+
 Production ready build can be found here:
 
 [https://spotify-for-running.netlify.app/](https://spotify-for-running.netlify.app/)
